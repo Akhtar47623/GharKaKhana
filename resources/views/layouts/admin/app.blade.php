@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{-- <div id="main-wrapper">
-        @include('layouts.admin.templates.header')
-    <div class="container">
-        @include('layouts.admin.templates.sidebar')
-        <div class="page-wrapper">
-            @yield('content')
-            @include('layouts.admin.templates.footer')
-        </div>
-    </div>
-</div> --}}
-    {{-- @include('layouts.admin.includes.scripts') --}}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,18 +42,11 @@
         <div class="main-panel">
 
                  @yield('content')
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          @include('layouts.admin.templates.footer')
-          <!-- partial -->
         </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    {{-- @include('layouts.admin.includes.scripts') --}}
-    <!-- External CDNs (added first to avoid conflicts) -->
 
 
 <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
