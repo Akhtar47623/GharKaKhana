@@ -1,0 +1,1375 @@
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+    .banner-sec h2 {
+        font-size: 90px;
+    }
+
+    .Inter-childern-box ul li {
+        font-size: 13px;
+    }
+
+    .counter-box p,
+    .footer-logo p,
+    .footer-newsletter p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .footer-contact ul li a {
+        font-size: 17px;
+    }
+
+    .footer-newsletter ul li a {
+        font-size: 19px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        transition: 1.5s;
+    }
+
+    .footer-newsletter ul {
+        gap: 10px;
+    }
+
+    .footer-newsletter ul li h2 {
+        font-size: 17px;
+        margin-right: 10px;
+    }
+
+    .Inter-develop-heading h2,
+    .counter-box h2,
+    .event-heading h2 {
+        font-size: 45px;
+    }
+
+    .counter-box img {
+        width: 35%;
+    }
+
+    .container-fluid.padding {
+        padding: 0 30px !important;
+    }
+
+    .Inter-childern-box ul li span {
+        display: contents;
+    }
+
+    .services-boxs h2,
+    .text-box-1 h2 {
+        font-size: 25px;
+    }
+
+    .text-box-1 p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .banner_text h1 {
+        font-size: 55px;
+        margin-bottom: 5%;
+    }
+
+    .menusec-button a {
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .bnner-sider-img {
+        right: -19%;
+    }
+
+    .bnner-sider-img img {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container-fluid.padding {
+        padding: 0 15px;
+    }
+
+    .counter-sec .row,
+    .mission-sec .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-1,
+    .contact-area p,
+    .copy-right p,
+    .donate-checkbox label {
+        font-size: 16px;
+    }
+
+    .footer-contact,
+    .footer-newsletter {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .about-text a,
+    .footer-contact ul li a {
+        font-size: 15px;
+    }
+
+    .contact-area .btn-1,
+    .footer-contact ul li i,
+    .text-box-1 h2 {
+        font-size: 20px;
+    }
+
+    .Inter-childern-box img,
+    .about-img,
+    .footer-contact ul li {
+        margin-bottom: 5%;
+    }
+
+    .footer-contact h2 {
+        font-size: 35px;
+        margin-bottom: 4%;
+    }
+
+    .footer-newsletter ul li a {
+        font-size: 16px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .footer-newsletter ul {
+        gap: 6px;
+    }
+
+    .footer-newsletter ul li h2 {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    .footer-newsletter p {
+        font-size: 13px;
+    }
+
+    .footer-newsletter h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+    }
+
+    .footer-logo p {
+        font-size: 13px;
+        line-height: 23px;
+    }
+
+    .footer-sec {
+        padding: 15% 0 20px;
+    }
+
+    .counter-box,
+    .event-box-wrp.mt-5,
+    .footer-logo,
+    .footer-newsletter {
+        margin-bottom: 10%;
+    }
+
+    .event-cont table td {
+        font-size: 17px;
+    }
+
+    .event-cont {
+        width: 100%;
+        padding: 20px;
+        margin-top: -100px;
+    }
+
+    .event-cont h4 {
+        top: -26px;
+        font-size: 30px;
+    }
+
+    .counter-sec,
+    .image-area > img {
+        height: auto;
+    }
+
+    .event-box-wrp > img {
+        height: 340px;
+    }
+
+    .Inter-develop-heading h2,
+    .event-heading h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .about-sec,
+    section.event-sec {
+        padding: 40px 0;
+    }
+
+    .counter-box p,
+    .services-boxs p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .counter-box h2 {
+        font-size: 35px;
+        margin-bottom: 3%;
+    }
+
+    .counter-box img {
+        width: 27%;
+        margin: 10px;
+    }
+
+    .Inter-develop-sec,
+    section.efforts-sec {
+        padding: 30px 0;
+    }
+
+    .Inter-childern-box.chg3 {
+        margin-top: 10%;
+        padding: 40px 20px;
+    }
+
+    .Inter-childern-box ul li {
+        font-size: 11px;
+    }
+
+    .Inter-childern-box h2 {
+        font-size: 30px;
+        margin-bottom: 5%;
+    }
+
+    .Inter-childern-box {
+        padding: 20px 15px;
+    }
+
+    .Inter-childern-box ul li span,
+    .Inter-develop-heading h2 span {
+        display: contents;
+    }
+
+    .Inter-develop-heading,
+    .programs-detail-sec {
+        text-align: center;
+    }
+
+    .Inter-develop-heading p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .contact-area h3 {
+        font-size: 25px;
+    }
+
+    section.efforts-sec h4 {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: -25px;
+    }
+
+    .services-silder .slick-next:before,
+    .services-silder .slick-prev:before {
+        display: none;
+    }
+
+    .services-boxs h2 {
+        font-size: 22px;
+    }
+
+    .services-boxs a {
+        font-size: 14px;
+    }
+
+    .services-heading h2 {
+        font-size: 40px;
+    }
+
+    .about-text p,
+    .text-box-1 p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .about-text h4,
+    .event-gallery-heading h2,
+    .events-details ul li h2,
+    .events-text h2 {
+        font-size: 35px;
+    }
+
+    .bnner-sider-img {
+        right: -30%;
+    }
+
+    .bnner-sider-img img {
+        background-size: contain;
+        width: 60%;
+    }
+
+    .text-box-1 img {
+        width: 18%;
+    }
+
+    .text-box-1 {
+        height: 200px;
+        margin-bottom: 5%;
+    }
+
+    .text-box-1.chg {
+        margin-top: 0;
+    }
+
+    .menuSec {
+        position: absolute;
+        background: 0 0;
+    }
+
+    .menusec-button a {
+        padding: 13px 18px;
+        font-size: 11px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: 450px;
+    }
+
+    .banner_text p {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 8%;
+    }
+
+    .banner_text h1 {
+        font-size: 40px;
+        margin-bottom: 5%;
+        line-height: 50px;
+    }
+
+    .banner_text a {
+        padding: 14px 41px;
+        font-size: 14px;
+    }
+
+    .banner-video-icon a {
+        font-size: 30px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .banner-video-icon {
+        width: 25%;
+        bottom: 2%;
+    }
+
+    .menuSec ul li a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .banner-sec h2 {
+        font-size: 85px;
+    }
+
+    .contact-text h2 {
+        font-size: 34px;
+    }
+
+    .donate-heading h2 {
+        font-size: 60px;
+    }
+
+    .donate-personal-heading h2 {
+        font-size: 30px;
+    }
+
+    .card-detail-form button {
+        width: 20%;
+    }
+
+    .programs-detail-text p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container-fluid.padding {
+        padding: 0 15px;
+    }
+
+    .about-mission.chg,
+    .effort-box-wrap.chg {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .counter-sec .row,
+    .mission-sec .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .copy-right p,
+    .footer-logo p,
+    .footer-newsletter p,
+    .services-boxs a {
+        font-size: 14px;
+    }
+
+    .footer-contact,
+    .footer-newsletter {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .btn-1,
+    .contact-area p,
+    .footer-contact ul li a {
+        font-size: 16px;
+    }
+
+    .contact-area .btn-1,
+    .footer-contact ul li i {
+        font-size: 20px;
+    }
+
+    .Inter-childern-box img,
+    .about-img,
+    .footer-contact ul li {
+        margin-bottom: 5%;
+    }
+
+    .footer-contact h2 {
+        font-size: 35px;
+        margin-bottom: 4%;
+    }
+
+    .footer-newsletter ul li a {
+        font-size: 16px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .footer-newsletter ul {
+        gap: 6px;
+    }
+
+    .footer-newsletter ul li h2 {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    .donate-personal-heading h2,
+    .footer-newsletter h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+    }
+
+    .footer-sec {
+        padding: 15% 0 20px;
+    }
+
+    .counter-box,
+    .event-box-wrp.mt-5,
+    .footer-logo,
+    .footer-newsletter {
+        margin-bottom: 10%;
+    }
+
+    .donate-checkbox label,
+    .event-cont table td {
+        font-size: 17px;
+    }
+
+    .event-cont {
+        width: 100%;
+        padding: 20px;
+        margin-top: -100px;
+    }
+
+    .event-cont h4 {
+        top: -26px;
+        font-size: 30px;
+    }
+
+    .counter-sec,
+    .image-area > img {
+        height: auto;
+    }
+
+    .event-box-wrp > img {
+        height: 340px;
+    }
+
+    .contact-text h2,
+    .event-heading h2 {
+        font-size: 25px;
+        line-height: 40px;
+    }
+
+    .about-sec,
+    section.event-sec {
+        padding: 40px 0;
+    }
+
+    .Inter-develop-heading p,
+    .counter-box p,
+    .text-box-1 p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .counter-box h2 {
+        font-size: 40px;
+        margin-bottom: 3%;
+    }
+
+    .counter-box img {
+        width: 15%;
+        margin: 10px;
+    }
+
+    .Inter-develop-sec,
+    section.efforts-sec {
+        padding: 30px 0;
+    }
+
+    .Inter-childern-box.chg3 {
+        margin-top: 10%;
+        padding: 40px 20px;
+    }
+
+    .Inter-childern-box ul li {
+        font-size: 11px;
+    }
+
+    .Inter-childern-box h2 {
+        font-size: 30px;
+        margin-bottom: 5%;
+    }
+
+    .Inter-childern-box {
+        padding: 20px 15px;
+    }
+
+    .Inter-childern-box ul li span,
+    .Inter-develop-heading h2 span {
+        display: contents;
+    }
+
+    .Inter-develop-heading,
+    .programs-detail-sec {
+        text-align: center;
+    }
+
+    .Inter-develop-heading h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .contact-area h3,
+    .events-text h2,
+    .services-heading h2,
+    ul.contact-number li h3 {
+        font-size: 30px;
+    }
+
+    section.efforts-sec h4 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: -25px;
+    }
+
+    .services-silder .slick-next:before,
+    .services-silder .slick-prev:before {
+        display: none;
+    }
+
+    .events-details ul li h2,
+    .services-boxs h2,
+    .text-box-1 h2 {
+        font-size: 25px;
+    }
+
+    .services-boxs p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .about-text a {
+        font-size: 15px;
+    }
+
+    .about-text p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .about-text h4 {
+        font-size: 35px;
+    }
+
+    .text-box-1 {
+        height: 250px;
+        margin-bottom: 5%;
+    }
+
+    .bnner-sider-img {
+        right: -48%;
+    }
+
+    .bnner-sider-img img {
+        background-size: contain;
+        width: 51%;
+    }
+
+    .text-box-1 img {
+        width: 18%;
+    }
+
+    .text-box-1.chg {
+        margin-top: 0;
+    }
+
+    .menuSec {
+        position: absolute;
+        background: 0 0;
+    }
+
+    .menusec-button a {
+        padding: 13px 18px;
+        font-size: 11px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: 580px;
+    }
+
+    .banner_text p {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 8%;
+    }
+
+    .banner_text h1 {
+        font-size: 40px;
+        margin-bottom: 5%;
+        line-height: 50px;
+    }
+
+    .banner_text a {
+        padding: 14px 41px;
+        font-size: 14px;
+    }
+
+    .banner-video-icon a {
+        font-size: 30px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .banner-video-icon {
+        width: 25%;
+        bottom: 2%;
+    }
+
+    .banner-sec h2 {
+        font-size: 75px;
+    }
+
+    .menuSec ul li a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .event-gallery-heading h2,
+    .programs-detail-text h2 {
+        font-size: 40px;
+    }
+
+    .programs-detail-text p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .events-details ul li p {
+        font-size: 12px;
+    }
+
+    .donate-heading h2 {
+        font-size: 55px;
+    }
+
+    .card-detail-form button {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 520px) and (max-width: 767px) {
+    .Inter-develop-heading,
+    .about-sec,
+    .contact-sec,
+    .event-heading,
+    .events-sec,
+    .menusec-button,
+    .mission-sec,
+    .programs-detail-sec {
+        text-align: center;
+    }
+
+    .container-fluid.padding {
+        padding: 0 25px;
+    }
+
+    .banner_text {
+        position: relative;
+        z-index: 99;
+    }
+
+    .about-text p,
+    .copy-right p,
+    .events-text p,
+    .footer-logo p,
+    .footer-newsletter p,
+    .services-boxs a {
+        font-size: 14px;
+    }
+
+    .footer-contact,
+    .footer-newsletter {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .Inter-childern-box ul li,
+    .btn-1,
+    .contact-area p,
+    .footer-contact ul li a {
+        font-size: 16px;
+    }
+
+    .contact-area .btn-1,
+    .footer-contact ul li i {
+        font-size: 20px;
+    }
+
+    .Inter-childern-box img,
+    .about-img,
+    .footer-contact ul li,
+    .text-box-1 {
+        margin-bottom: 5%;
+    }
+
+    .footer-contact h2 {
+        font-size: 35px;
+        margin-bottom: 4%;
+    }
+
+    .footer-newsletter ul li a {
+        font-size: 16px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .footer-newsletter ul {
+        gap: 6px;
+    }
+
+    .footer-newsletter ul li h2 {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    .footer-newsletter h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+    }
+
+    .footer-sec {
+        padding: 15% 0 20px;
+    }
+
+    .counter-box,
+    .event-box-wrp.mt-5,
+    .footer-logo,
+    .footer-newsletter {
+        margin-bottom: 10%;
+    }
+
+    .donate-checkbox label,
+    .event-cont table td {
+        font-size: 17px;
+    }
+
+    .event-cont {
+        width: 100%;
+        padding: 20px;
+        margin-top: -100px;
+    }
+
+    .event-cont h4 {
+        top: -26px;
+        font-size: 30px;
+    }
+
+    .counter-sec,
+    .image-area > img {
+        height: auto;
+    }
+
+    .event-box-wrp > img {
+        height: 340px;
+    }
+
+    .Inter-develop-heading h2,
+    .contact-text h2,
+    .event-heading h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    section.event-sec {
+        padding: 40px 0;
+    }
+
+    .Inter-develop-heading p,
+    .counter-box p,
+    .text-box-1 p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .counter-box h2 {
+        font-size: 40px;
+        margin-bottom: 3%;
+    }
+
+    .counter-box img {
+        width: 15%;
+        margin: 10px;
+    }
+
+    .Inter-develop-sec,
+    section.efforts-sec {
+        padding: 30px 0;
+    }
+
+    .Inter-childern-box.chg3 {
+        margin-top: 10%;
+        padding: 40px 20px;
+    }
+
+    .Inter-childern-box h2,
+    .donate-personal-heading h2 {
+        font-size: 30px;
+        margin-bottom: 5%;
+    }
+
+    .Inter-childern-box {
+        padding: 20px;
+    }
+
+    .Inter-childern-box ul li span,
+    .Inter-develop-heading h2 span {
+        display: contents;
+    }
+
+    .contact-area h3,
+    .services-heading h2,
+    ul.contact-number li h3 {
+        font-size: 30px;
+    }
+
+    section.efforts-sec h4 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: -25px;
+    }
+
+    .services-silder .slick-next:before,
+    .services-silder .slick-prev:before {
+        display: none;
+    }
+
+    .services-boxs h2,
+    .text-box-1 h2 {
+        font-size: 25px;
+    }
+
+    .services-boxs p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .about-sec {
+        padding: 40px 0;
+    }
+
+    .about-text a {
+        font-size: 15px;
+    }
+
+    .about-text h4,
+    .donate-heading h2 {
+        font-size: 45px;
+    }
+
+    .text-box-1 img {
+        width: 18%;
+    }
+
+    .text-box-1.chg {
+        margin-top: 0;
+    }
+
+    .contact-area {
+        margin-bottom: 12%;
+    }
+
+    .menuSec {
+        position: inherit;
+        background: #000;
+    }
+
+    .menusec-button a {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: 450px;
+    }
+
+    .banner_text p {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 8%;
+    }
+
+    .banner_text h1 {
+        font-size: 40px;
+        margin-bottom: 5%;
+        line-height: 50px;
+    }
+
+    .banner_text a {
+        padding: 14px 41px;
+        font-size: 14px;
+    }
+
+    .banner-video-icon a {
+        font-size: 30px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .banner-video-icon {
+        width: 25%;
+        bottom: 2%;
+    }
+
+    .bnner-sider-img {
+        right: -71%;
+    }
+
+    .bnner-sider-img img {
+        width: 50%;
+    }
+
+    .banner-sec h2 {
+        font-size: 60px;
+    }
+
+    .banner-sec {
+        height: 350px;
+    }
+
+    .mission-sec {
+        padding: 0;
+    }
+
+    .contact-sec {
+        padding: 30px 0;
+    }
+
+    ul.contact-number {
+        justify-content: center;
+    }
+
+    .card-detail-form button {
+        width: 34%;
+        height: 55px;
+        font-size: 15px;
+        margin-top: 3%;
+    }
+
+    .event-gallery-heading h2,
+    .events-text h2,
+    .inner-event-heading h2,
+    .programs-detail-text h2 {
+        font-size: 35px;
+    }
+
+    .inner-event-heading {
+        margin-bottom: -25px;
+    }
+
+    .programs-detail-text p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 519px) {
+	.payment-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.payment-btn a {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 48px;
+}
+.logo a img {
+    width: 150px;
+    height: 37px;
+}
+.bnner-sider-img img {
+    width: 380px;
+    height: 540px;
+}
+    .container-fluid.padding {
+        padding: 0 15px;
+    }
+
+    .copy-right p {
+        font-size: 13px;
+    }
+
+    .footer-contact,
+    .footer-newsletter {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .about-text a,
+    .btn-1,
+    .event-cont table td,
+    .footer-contact ul li a {
+        font-size: 15px;
+    }
+
+    .footer-contact ul li i {
+        font-size: 18px;
+    }
+
+    .footer-contact h2 {
+        font-size: 30px;
+        margin-bottom: 5%;
+    }
+
+    .footer-newsletter ul li a {
+        font-size: 16px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .footer-newsletter ul {
+        gap: 6px;
+    }
+
+    .footer-newsletter ul li h2 {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    .Inter-childern-box ul li,
+    .about-text p,
+    .contact-area p,
+    .contact-text p,
+    .contact-text time,
+    .events-text p,
+    .footer-logo p,
+    .footer-newsletter p,
+    .services-boxs a {
+        font-size: 14px;
+    }
+
+    .footer-newsletter h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+    }
+
+    .footer-sec {
+        padding: 15% 0 20px;
+    }
+
+    .counter-box,
+    .event-box-wrp.mt-5,
+    .footer-logo,
+    .footer-newsletter {
+        margin-bottom: 10%;
+    }
+
+    .event-cont {
+        width: 100%;
+        padding: 20px;
+        margin-top: -100px;
+    }
+
+    .event-cont h4 {
+        top: -20px;
+        font-size: 25px;
+    }
+
+    .counter-sec,
+    .image-area > img {
+        height: auto;
+    }
+
+    .event-box-wrp > img {
+        height: 340px;
+    }
+
+    .Inter-develop-heading,
+    .event-heading,
+    .events-sec,
+    .mission-text,
+    .programs-detail-sec {
+        text-align: center;
+    }
+
+    .event-heading h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .Inter-develop-heading p,
+    .counter-box p,
+    .programs-detail-text p,
+    .text-box-1 p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .counter-box h2 {
+        font-size: 40px;
+        margin-bottom: 3%;
+    }
+
+    .counter-box img,
+    .text-box-1 img {
+        width: 25%;
+    }
+
+    .Inter-develop-sec,
+    section.efforts-sec {
+        padding: 30px 0;
+    }
+
+    .Inter-childern-box.chg3 {
+        margin-top: 10%;
+        padding: 40px 20px;
+    }
+
+    .Inter-childern-box img,
+    .about-img,
+    .text-box-1 {
+        margin-bottom: 5%;
+    }
+
+    .Inter-childern-box h2,
+    .donate-personal-heading h2 {
+        font-size: 25px;
+        margin-bottom: 5%;
+    }
+
+    .Inter-childern-box {
+        padding: 20px;
+    }
+
+    .Inter-childern-box ul li span,
+    .Inter-develop-heading h2 span,
+    .contact-text h2 span {
+        display: contents;
+    }
+
+    .Inter-develop-heading h2 {
+        font-size: 27px;
+        line-height: 40px;
+    }
+
+    .contact-area .btn-1,
+    .contact-area h3,
+    .services-boxs h2 {
+        font-size: 20px;
+    }
+
+    section.efforts-sec h4 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: -25px;
+    }
+
+    .services-silder .slick-next:before,
+    .services-silder .slick-prev:before {
+        display: none;
+    }
+
+    .services-boxs p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .events-details ul li h2,
+    .services-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-sec,
+    .contact-sec {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .about-text h4 {
+        font-size: 45px;
+    }
+
+    .inner-event-heading h2,
+    .text-box-1 h2,
+    ul.contact-number li h3 {
+        font-size: 25px;
+    }
+
+    .contactus-form textarea,
+    .text-box-1.chg {
+        margin-top: 0;
+    }
+
+    .contact-area {
+        margin-bottom: 12%;
+    }
+
+    .menuSec {
+        position: inherit;
+        background: #000;
+    }
+
+    .menusec-button a {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: 500px;
+    }
+
+    .banner_text p {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 10%;
+    }
+
+    .banner_text h1 {
+        font-size: 35px;
+        margin-bottom: 5%;
+        line-height: 45px;
+    }
+
+    .banner_text a {
+        padding: 14px 41px;
+        font-size: 14px;
+    }
+
+    .banner-video-icon a {
+        font-size: 30px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .banner-video-icon {
+        width: 25%;
+        bottom: 2%;
+    }
+
+    .banner_text {
+        position: relative;
+        z-index: 99;
+    }
+
+    .result-wrp-flx {
+        display: block;
+    }
+
+    .banner-sec h2,
+    .donate-heading h2,
+    .event-gallery-heading h2 {
+        font-size: 35px;
+    }
+
+    .banner-sec {
+        height: 300px;
+    }
+
+    .mission-sec {
+        padding: 0;
+    }
+
+    ul.contact-number h2 {
+        font-size: 17px;
+    }
+
+    .contact-text h2 {
+        font-size: 25px;
+        line-height: 40px;
+        margin-bottom: 5%;
+    }
+
+    .contactus-form button {
+        width: 50%;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .donate-checkbox label {
+        font-size: 16px;
+    }
+
+    .card-detail-form button {
+        width: 53%;
+        height: 50px;
+        font-size: 15px;
+        margin-top: 3%;
+    }
+
+    .events-text h2 {
+        font-size: 27px;
+        margin-bottom: 5%;
+    }
+
+    section.event-sec {
+        padding: 0;
+        margin-bottom: 20%;
+    }
+
+    .programs-detail-text h2 {
+        font-size: 28px;
+        margin-bottom: 3%;
+    }
+
+    .banner_text {
+        position: relative;
+        z-index: 99;
+        background: #0000004a;
+    }
+}
