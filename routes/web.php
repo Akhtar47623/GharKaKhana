@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FoodController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,7 @@ Route::get('/products', function () {
 Route::get('/products/create', function () {
     return view('admin.products.add');
 })->middleware(['auth', 'verified'])->name('product.create');
+Route::resource('foods', FoodController::class)->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
