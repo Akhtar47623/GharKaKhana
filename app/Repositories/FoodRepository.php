@@ -2,38 +2,59 @@
 
 namespace App\Repositories;
 
+use App\Helpers\ImageHelper;
 use App\Models\Food;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 
 class FoodRepository implements FoodRepositoryInterface
 {
-    public function all(): Collection
+    public function all()
     {
         return Food::all();
     }
 
-    public function findById(int $id): ?Food
+    public function store(Request $request)
     {
-        return Food::find($id);
+        $imagePaths = [];
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imagePaths[] = ImageHelper::uploadImage($image, 'Food');
+            }
+        }
+
+        return Food::create([
+            'name' => $request->name,
+            'short_desc' => $request->short_desc,
+            'image' => $imagePaths[0] ?? null,
+        ]);
     }
 
-    public function findByUuid(string $uuid): ?Food
+    public function findByUuid($uuid)
     {
-        return Food::where('uuid', $uuid)->first();
+        return Food::findOrFail($uuid);
     }
 
-    public function create(array $data): Food
+    public function update(Request $request, $uuid)
     {
-        return Food::create($data);
+        $food = Food::findOrFail($uuid);
+
+        $validated = $request->validate([
+            'name' => 'sometimes|required|string|max:255',
+            'short_desc' => 'nullable|string',
+            'path' => 'nullable|string',
+        ]);
+
+        $food->update($validated);
+
+        return $food;
     }
 
-    public function update(Food $food, array $data): bool
+    public function delete($uuid)
     {
-        return $food->update($data);
-    }
+        $food = Food::findOrFail($uuid);
+        $food->delete();
 
-    public function delete(Food $food): bool
-    {
-        return $food->delete();
+        return true;
     }
 }

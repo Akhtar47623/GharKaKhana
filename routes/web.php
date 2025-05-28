@@ -11,12 +11,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('admin.dashboard.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/products', function () {
-    return view('admin.products.index1');
-})->middleware(['auth', 'verified'])->name('products');
-Route::get('/products/create', function () {
-    return view('admin.products.add');
-})->middleware(['auth', 'verified'])->name('product.create');
 Route::resource('foods', FoodController::class)->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {

@@ -95,7 +95,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{route('products')}}">
+      <a class="nav-link" href="{{route('foods.index')}}">
         <i class="icon-paper menu-icon"></i>
         <span class="menu-title">Product Management</span>
       </a>
