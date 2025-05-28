@@ -73,5 +73,6 @@
 
 <!-- DataTables Bootstrap 5 integration -->
 <script src="https://cdn.datatables.net/2.3.1/js/dataTables.bootstrap5.js"></script>
+   @stack('js')
   </body>
 </html>
