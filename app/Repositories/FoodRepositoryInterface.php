@@ -2,15 +2,22 @@
 
 namespace App\Repositories;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\Food;
 
 interface FoodRepositoryInterface
 {
-    public function all();
-    // public function findById(int $id): ?Food;
-    // public function findByUuid(string $uuid): ?Food;
-    // public function create(array $data): Food;
-    // public function update(Food $food, array $data): bool;
-    // public function delete(Food $food): bool;
+
+    public function all(): Collection;
+
+
+    public function store(Request $request): Food;
+
+
+    public function update(Request $request, $id): void;
+
+    public function findByUuid(string $uuid): Food;
+
+    public function delete(string $uuid): bool;
 }

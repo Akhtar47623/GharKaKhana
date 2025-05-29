@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Food;
 use App\Repositories\FoodRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -40,18 +41,26 @@ class FoodController extends Controller
     public function show($uuid)
     {
         $food = $this->foodRepository->findByUuid($uuid);
-        return response()->json($food);
+         return view('admin.Foods.show', compact('food'));
+    }
+    public function edit($id)
+    {
+        $food = Food::findOrFail($id);
+        return view('admin.foods.edit', compact('food'));
     }
 
-    public function update(Request $request, $uuid)
+
+   public function update(Request $request, $id)
     {
-        $food = $this->foodRepository->update($request, $uuid);
-        return response()->json($food);
+        $this->foodRepository->update($request, $id);
+
+        return redirect()->route('foods.index')->with('success', 'Food updated successfully.');
     }
 
     public function destroy($uuid)
     {
         $this->foodRepository->delete($uuid);
-        return response()->json(null, 204);
+
+        return redirect('foods')->with('success', 'Food created!');
     }
 }

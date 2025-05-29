@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end gap-2">
-                      <button class="btn btn-light border">Cancel</button>
+                       <a href="{{ route('foods.index') }}" class="btn btn-light border">Cancel</a>
                       <button type="submit" class="btn btn-success mr-2">Add</button>
                     </div>
                   </form>

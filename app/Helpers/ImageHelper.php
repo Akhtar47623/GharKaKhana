@@ -7,10 +7,14 @@ use Illuminate\Support\Str;
 
 class ImageHelper
 {
-    public static function uploadImage($file, $folder = 'uploads')
-    {
-        $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
-        $path = $file->storeAs("public/$folder", $filename);
-        return Storage::url($path); // returns a public URL
+  public static function uploadImage($file, $folder = 'uploads')
+{
+    $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+    $path = $file->storeAs($folder, $filename, 'public');
+    if (!Storage::disk('public')->exists("$folder/$filename")) {
+        throw new \Exception("File not uploaded.");
     }
+    return 'storage/' . $path;
+}
+
 }
