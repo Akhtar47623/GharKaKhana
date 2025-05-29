@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-@section('title', 'Services')
+@section('title', 'Foods')
 @section('content')
         <div class="content-wrapper">
           <div class="row">
@@ -16,6 +16,18 @@
                       <label for="product_name">Food Name</label>
                       <input type="text" name="name" class="form-control" id="product_name" placeholder="name">
                     </div>
+                  <div class="form-group">
+                    <label for="categories">Categories:</label>
+                    <select name="categories[]" id="categories" multiple class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}"
+                                {{ isset($food) && $food->categories->contains($category->id) ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
                     <div class="form-group">
                       <label for="exampleTextarea1">Textarea</label>
                       <textarea class="form-control" id="exampleTextarea1" rows="4" name="short_desc"></textarea>
@@ -41,7 +53,7 @@
                     </div>
                     <div class="d-flex justify-content-end gap-2">
                        <a href="{{ route('foods.index') }}" class="btn btn-light border">Cancel</a>
-                      <button type="submit" class="btn btn-success mr-2">Add</button>
+                      <button type="submit" class="btn btn-success mr-2 text-white">Add</button>
                     </div>
                   </form>
                 </div>

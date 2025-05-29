@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FoodController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,8 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('foods', FoodController::class)->middleware(['auth', 'verified']);
-Route::resource('categories', CategoryController::class);
+Route::resource('categories', CategoryController::class)->middleware(['auth', 'verified']);
+Route::resource('menus', MenuController::class)->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {

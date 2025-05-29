@@ -30,9 +30,6 @@
     </div>
   </div>
 </div>
-<p>Current route name: {{ Route::currentRouteName() }}</p>
-<p>Is foods.* active? {{ request()->routeIs('foods.*') ? 'YES' : 'NO' }}</p>
-<p>Is categories.* active? {{ request()->routeIs('categories.*') ? 'YES' : 'NO' }}</p>
 
 @include('layouts.admin.templates.footer')
 @endsection

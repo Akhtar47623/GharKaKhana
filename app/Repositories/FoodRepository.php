@@ -12,7 +12,7 @@ class FoodRepository implements FoodRepositoryInterface
 {
    public function all(): Collection
     {
-        return Food::orderBy('id', 'desc')->get();
+        return Food::with('categories')->orderBy('id', 'desc')->get();
     }
      public function store(Request $request):Food
     {
@@ -23,12 +23,17 @@ class FoodRepository implements FoodRepositoryInterface
                 $imagePaths[] = ImageHelper::uploadImage($image, 'Food');
             }
         }
-
-        return Food::create([
+          $food = Food::create([
             'name' => $request->name,
             'short_desc' => $request->short_desc,
             'image' => $imagePaths[0] ?? null,
         ]);
+
+        if ($request->has('categories')) {
+            $food->categories()->attach($request->categories);
+        }
+
+        return $food;
     }
 
   public function update(Request $request, $id):void
@@ -50,12 +55,14 @@ class FoodRepository implements FoodRepositoryInterface
             $food->image = $imagePaths[0] ?? $food->image;
         }
 
-        // Update basic fields
         $food->update([
             'name' => $request->name,
             'short_desc' => $request->short_desc,
-            'image' => $food->image, // already updated above if new file uploaded
+            'image' => $food->image,
         ]);
+        if ($request->has('categories')) {
+            $food->categories()->sync($request->categories);
+        }
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Food;
 use App\Repositories\FoodRepositoryInterface;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class FoodController extends Controller
     }
       public function create()
     {
-        return view('admin.Foods.add');
+         $categories = Category::all();
+        return view('admin.Foods.add', compact('categories'));
     }
 
     public function store(Request $request)

@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="table-header">
             <div class="d-flex justify-content-end">
-                <a href="{{ route('categories.create') }}" class="btn btn-success">Add Category</a>
+                <a href="{{ route('categories.create') }}" class="btn btn-success text-white">Add Category</a>
             </div>
         </div>
 
