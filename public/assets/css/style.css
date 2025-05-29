@@ -22947,7 +22947,7 @@ select.border-dark.tt-hint:focus, .select2-container--default .select2-selection
   outline: 1px solid #282f3a;
 }
 select.form-select {
-  padding: 0.4375rem 0.75rem;
+  /* padding: 0.4375rem 0.75rem; */
   border: 0;
   outline: 1px solid #CED4DA;
   color: #c9c8c8;

@@ -81,7 +81,7 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
         <i class="icon-ban menu-icon"></i>
         <span class="menu-title">Error pages</span>
@@ -93,12 +93,21 @@
           <li class="nav-item"> <a class="nav-link" href="../pages/samples/error-500.html"> 500 </a></li>
         </ul>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('foods.index')}}">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Product Management</span>
-      </a>
-    </li>
+    </li> --}}
+   <li class="nav-item {{ request()->routeIs('categories.*') ? 'active' : '' }}">
+  <a class="nav-link" href="{{ route('categories.index') }}">
+      <i class="icon-paper menu-icon"></i>
+      <span class="menu-title">Food Category</span>
+  </a>
+</li>
+
+<li class="nav-item {{ request()->routeIs('foods.*') ? 'active' : '' }}">
+  <a class="nav-link" href="{{ route('foods.index') }}">
+      <i class="icon-paper menu-icon"></i>
+      <span class="menu-title">Food Management</span>
+  </a>
+</li>
+
+
   </ul>
 </nav>

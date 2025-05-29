@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repositories\CategoryRepository;
+use App\Repositories\CategoryRepositoryInterface;
+use App\Repositories\FoodRepository;
+use App\Repositories\FoodRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -11,10 +15,8 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-           $this->app->bind(
-            \App\Repositories\FoodRepositoryInterface::class,
-            \App\Repositories\FoodRepository::class
-        );
+       $this->app->bind(FoodRepositoryInterface::class, FoodRepository::class);
+       $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
     }
 
     /**
