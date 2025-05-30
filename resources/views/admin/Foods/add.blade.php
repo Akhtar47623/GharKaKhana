@@ -12,9 +12,19 @@
                   </p>
                   <form class="forms-sample" action="{{route('foods.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                      <label for="product_name">Food Name</label>
-                      <input type="text" name="name" class="form-control" id="product_name" placeholder="name">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="product_name">Food Name</label>
+                                <input type="text" name="name" class="form-control" id="product_name" placeholder="name">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" name="price" class="form-control" id="price" placeholder="Price">
+                            </div>
+                        </div>
                     </div>
                   <div class="form-group">
                     <label for="categories">Categories:</label>

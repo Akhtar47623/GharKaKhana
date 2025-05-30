@@ -14,19 +14,48 @@ class MenuRepository implements MenuRepositoryInterface
 
     public function createMenu(Request $request)
     {
-        $menu = Menu::create([
-            'day' => $request->day,
-            'meal_type' => $request->meal_type,
+        $request->validate([
+            'meals' => 'required|array',
+            'meals.*.day' => 'required|string',
+            'meals.*.meal_time' => 'required|string',
+            'meals.*.food_ids' => 'required|array',
+            'meals.*.food_ids.*' => 'exists:foods,id',
         ]);
 
-        foreach ($request->foods as $food) {
-            $menu->foods()->attach($food['food_id'], [
-                'ingredients' => $food['ingredients'] ?? null,
-                'toppings' => $food['toppings'] ?? null,
-                'drinks' => $food['drinks'] ?? null,
-            ]);
+        $day = $request->meals[0]['day'];
+        $menu = Menu::firstOrCreate(['day' => $day]);
+
+        // Clear existing entries for this menu (optional: keep only unique meal_time?)
+        $menu->menuItems()->delete();
+
+        // Insert each meal + food combo into menu_items
+        foreach ($request->meals as $mealData) {
+            foreach ($mealData['food_ids'] as $foodId) {
+                $menu->menuItems()->create([
+                    'food_id' => $foodId,
+                    'meal_type' => $mealData['meal_time'],
+                ]);
+            }
         }
 
-        return $menu;
+        return response()->json([
+            'success' => true,
+            'menu' => $menu->load('menuItems.food'),
+        ]);
     }
+    public function show($id)
+    {
+        return Menu::with('foods.categories')->findOrFail($id);
+    }
+
+
+     public function delete($uuid):bool
+    {
+        $menu = Menu::findOrFail($uuid);
+        $menu->delete();
+
+        return true;
+    }
+
+
 }

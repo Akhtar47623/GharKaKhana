@@ -15,6 +15,7 @@
                 <th>Name</th>
                 <th>Category</th>
                 <th>Short Desc</th>
+                <th>Price</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,10 +27,11 @@
                 <td>{{ $food->name }}</td>
                 <td>
                     @foreach($food->categories as $category)
-                        <span class="badge bg-secondary">{{ $category->name }}</span>
+                    <span class="badge bg-secondary">{{ $category->name }}</span>
                     @endforeach
                 </td>
                 <td>{{ $food->short_desc }}</td>
+                <td>{{ $food->price }}</td>
                 <td>
                     <a href="{{ route('foods.edit', $food->id) }}" title="Edit">
                         <i class="fa fa-edit text-primary"></i>
@@ -50,6 +52,7 @@
         </tbody>
     </table>
         </div>
+@include('layouts.admin.templates.footer')
 @endsection
 @push('js')
 <script>

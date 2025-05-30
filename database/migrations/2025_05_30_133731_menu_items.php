@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-         Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('food_id');
-            $table->unsignedBigInteger('menu_id');
-            $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
-            $table->foreignId('menu_id')->references('id')->on('menus')->onDelete('cascade');
+            $table->foreignId('food_id')->constrained('foods')->onDelete('cascade');
+            $table->foreignId('menu_id')->constrained('menus')->onDelete('cascade');
             $table->string('meal_type');
             $table->timestamps();
-            // $table->unique(['menu_id', 'food_id', 'meal_type']);
         });
     }
 

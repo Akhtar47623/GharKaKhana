@@ -43,8 +43,8 @@
             </tbody>
         </table>
     </div>
+@include('layouts.admin.templates.footer')
 @endsection
-
 @push('js')
 <script>
     document.addEventListener('DOMContentLoaded', function () {

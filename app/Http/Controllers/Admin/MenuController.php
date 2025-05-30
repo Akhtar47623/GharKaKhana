@@ -24,15 +24,28 @@ class MenuController extends Controller
 
     public function create()
     {
-        $foods = Food::all(); 
-        $categories = Category::all(); // Add this line
-        return view('admin.Menus.add', compact('foods', 'categories'));
+        $foods = Food::with('categories')->get();
+        return view('admin.Menus.add', compact('foods'));
     }
+
+    public function show($id)
+    {
+        $menu = $this->menuRepo->show($id);
+        return view('admin.menus.show', compact('menu'));
+    }
+
 
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $this->menuRepo->createMenu($request);
         return redirect()->route('menus.index')->with('success', 'Menu created successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $this->menuRepo->delete($id);
+
+        return redirect()->route('menus.index')->with('success', 'Menu deleted successfully.');
     }
 }

@@ -25,6 +25,7 @@ class FoodRepository implements FoodRepositoryInterface
         }
           $food = Food::create([
             'name' => $request->name,
+            'price' => $request->price,
             'short_desc' => $request->short_desc,
             'image' => $imagePaths[0] ?? null,
         ]);
@@ -40,16 +41,14 @@ class FoodRepository implements FoodRepositoryInterface
     {
         $food = Food::findOrFail($id);
 
-        // Upload new images
         $imagePaths = [];
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imagePaths[] = ImageHelper::uploadImage($image, 'Food');
             }
 
-            // Optionally delete the old image
             if ($food->image && file_exists(public_path($food->image))) {
-                unlink(public_path($food->image)); // or use ImageHelper::deleteImage($food->image);
+                unlink(public_path($food->image));
             }
 
             $food->image = $imagePaths[0] ?? $food->image;

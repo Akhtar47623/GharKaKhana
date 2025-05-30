@@ -9,25 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-       Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('food_id');
-            $table->unsignedBigInteger('menu_id');
-            $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
-            $table->foreign('menu_id')->references('id')->on('menu_items')->onDelete('cascade');
-            $table->text('ingredients')->nullable(); 
-            $table->text('toppings')->nullable();
-            $table->text('drinks')->nullable(); 
+            $table->string('day')->unique();  // One menu per day
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('menus');
     }
