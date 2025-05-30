@@ -16,10 +16,11 @@
         @include('layouts.admin.templates.sidebar')
         <div class="main-panel">
             @yield('content')
-        </div>
+          </div>
       </div>
     </div>
     @include('layouts.admin.includes.scripts')
+    {!! Toastr::message() !!}
     @stack('js')
   </body>
 </html>

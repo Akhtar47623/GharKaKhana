@@ -19,9 +19,6 @@ return new class extends Migration
             $table->text('short_desc')->nullable();
             $table->string('image')->nullable();
             $table->decimal('price', 8, 2)->default(0);
-            $table->json('ingredients')->nullable();
-            $table->json('toppings')->nullable();   
-            $table->json('drinks')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

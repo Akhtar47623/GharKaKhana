@@ -2,79 +2,63 @@
 @section('title', 'Menu Details')
 
 @section('content')
-<div class="container py-4">
-    <h1 class="mb-4">Menu Details - #{{ $menu->id }}</h1>
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Menu Details</h4>
+          <hr>
 
-    <div class="mb-3">
-        <h5>Day:</h5>
-        <p>{{ ucfirst($menu->day) }}</p>
+          <div class="mb-3">
+              <h5>Day:</h5>
+              <p>{{ ucfirst($menu->day) }}</p>
+          </div>
+
+          <div class="mb-3">
+              <h5>Meal Time:</h5>
+              <p>{{ ucfirst($menu->meal_time) }}</p>
+          </div>
+
+          <h3>Foods in this Menu</h3>
+
+          @if($menu->foods->count())
+              <div class="row">
+                  @foreach($menu->foods as $food)
+                      <div class="col-4">
+                          <div class="card mb-3">
+                              <div class="card-body">
+                                  <h5 class="card-title">{{ $food->name }}</h5>
+                                  <p><strong>Meal Type:</strong> {{ $food->pivot->meal_type ?? 'N/A' }}</p>
+                                  <p><strong>Description:</strong> {{ $food->short_desc ?? 'No description available.' }}</p>
+                                  <p><strong>Price:</strong> ${{ number_format($food->price, 2) }}</p>
+                                  <p><strong>Category:</strong> 
+                                      {{ $food->categories->pluck('name')->join(', ') ?? 'N/A' }}
+                                  </p>
+
+                                  @if($food->image)
+                                      <img src="{{ asset($food->image) }}" alt="{{ $food->name }}" class="img-fluid" style="max-width: 250px;">
+                                  @else
+                                      <p>No image available.</p>
+                                  @endif
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
+              </div>
+          @else
+              <p>No foods assigned to this menu yet.</p>
+          @endif
+
+          <div class="d-flex justify-content-end mt-4 gap-2">
+              <a href="{{ route('menus.index') }}" class="btn btn-secondary">Back to Menu List</a>
+              <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-primary">Edit Menu</a>
+          </div>
+
+        </div>
+      </div>
     </div>
-
-    <div class="mb-3">
-        <h5>Meal Time:</h5>
-        <p>{{ ucfirst($menu->meal_time) }}</p>
-    </div>
-
-    <div class="mb-3">
-        <h5>Food Name:</h5>
-        <p>{{ $menu->food_name }}</p>
-    </div>
-
-    <div class="mb-3">
-        <h5>Description:</h5>
-        <p>{{ $menu->description ?? 'No description available.' }}</p>
-    </div>
-
-    <div class="mb-3">
-        <h5>Price:</h5>
-        <p>${{ number_format($menu->price, 2) }}</p>
-    </div>
-
-    <div class="mb-3">
-        <h5>Category:</h5>
-        <p>{{ $menu->category->name ?? 'N/A' }}</p>
-    </div>
-
-    <div class="mb-3">
-        <h5>Food Image:</h5>
-        @if($menu->food_image)
-            <img src="{{ asset('storage/'.$menu->food_image) }}" alt="Food Image" class="img-fluid" style="max-width: 250px;">
-        @else
-            <p>No image available.</p>
-        @endif
-    </div>
-
-    {{-- Uncomment and add these if you store ingredients, toppings, drinks --}}
-    {{--
-    <div class="mb-3">
-        <h5>Ingredients:</h5>
-        <ul>
-            @foreach($menu->ingredients as $ingredient)
-                <li>{{ $ingredient->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-
-    <div class="mb-3">
-        <h5>Toppings:</h5>
-        <ul>
-            @foreach($menu->toppings as $topping)
-                <li>{{ $topping->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-
-    <div class="mb-3">
-        <h5>Drinks:</h5>
-        <ul>
-            @foreach($menu->drinks as $drink)
-                <li>{{ $drink->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-    --}}
-
-    <a href="{{ route('menus.index') }}" class="btn btn-secondary me-2">Back to Menu List</a>
-    <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-primary">Edit Menu</a>
+  </div>
 </div>
+@include('layouts.admin.templates.footer')
 @endsection

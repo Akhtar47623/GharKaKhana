@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Food;
 use App\Repositories\FoodRepositoryInterface;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
@@ -36,7 +37,7 @@ class FoodController extends Controller
         ]);
 
         $this->foodRepository->store($request);
-
+        Toastr::success('Food created successfully!');
         return redirect('foods')->with('success', 'Food created!');
     }
 
@@ -55,14 +56,14 @@ class FoodController extends Controller
    public function update(Request $request, $id)
     {
         $this->foodRepository->update($request, $id);
-
+        Toastr::success('Food updated successfully!');
         return redirect()->route('foods.index')->with('success', 'Food updated successfully.');
     }
 
     public function destroy($uuid)
     {
         $this->foodRepository->delete($uuid);
-
-        return redirect('foods')->with('success', 'Food created!');
+        Toastr::error('Food deleted successfully!');
+        return redirect('foods');
     }
 }
