@@ -94,19 +94,24 @@
         </ul>
       </div>
     </li> --}}
-   <li class="nav-item {{ request()->routeIs('categories.*') ? 'active' : '' }}">
-  <a class="nav-link" href="{{ route('categories.index') }}">
-      <i class="icon-paper menu-icon"></i>
-      <span class="menu-title">Food Category</span>
-  </a>
-</li>
-
-<li class="nav-item {{ request()->routeIs('foods.*') ? 'active' : '' }}">
-  <a class="nav-link" href="{{ route('foods.index') }}">
-      <i class="icon-paper menu-icon"></i>
-      <span class="menu-title">Food Management</span>
-  </a>
-</li>
+    <li class="nav-item ">
+      <a class="nav-link" href="{{ route('menus.index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Food Menu</span>
+      </a>
+    </li>
+    <li class="nav-item {{ request()->routeIs('categories.*')}}">
+      <a class="nav-link" href="{{ route('categories.index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Food Category</span>
+      </a>
+    </li>
+    <li class="nav-item {{ request()->routeIs('foods.*') ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('foods.index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Food Management</span>
+      </a>
+    </li>
 
 
   </ul>

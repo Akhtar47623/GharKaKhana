@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\CategoryRepositoryInterface;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,7 +35,8 @@ class CategoryController extends Controller
         ]);
 
         $this->categoryRepo->store($request);
-        return redirect()->route('categories.index')->with('success', 'Category created!');
+        Toastr::success('Category added successfully!');
+        return redirect()->route('categories.index');
     }
 
     public function show($id)
@@ -57,12 +59,14 @@ class CategoryController extends Controller
         ]);
 
         $this->categoryRepo->update($request, $id);
-        return redirect()->route('categories.index')->with('success', 'Category updated!');
+        Toastr::success('Category Updated successfully!');
+        return redirect()->route('categories.index');
     }
 
     public function destroy($id)
     {
         $this->categoryRepo->delete($id);
-        return redirect()->route('categories.index')->with('success', 'Category deleted!');
+        Toastr::error('Category Deleted successfully!');
+        return redirect()->route('categories.index');
     }
 }

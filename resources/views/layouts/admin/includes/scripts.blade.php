@@ -15,4 +15,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-yZB6gGuLOO4PKfX9VRNn0e1wKTLTT1sA9AOf7NQod1BLXM96KHQ3d+nUysx+v7GhX5s9WqOtMeR4rE+BSz5j4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.datatables.net/2.3.1/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.3.1/js/dataTables.bootstrap5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 

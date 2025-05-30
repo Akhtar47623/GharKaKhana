@@ -8,7 +8,6 @@
         <div class="card-body">
           <h4 class="card-title">Edit Category</h4>
           <hr>
-
           <form class="forms-sample" action="{{ route('categories.update', $category->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -25,7 +24,7 @@
 
             <div class="d-flex justify-content-end gap-2">
               <a href="{{ route('categories.index') }}" class="btn btn-light border">Cancel</a>
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-success text-white">Update</button>
             </div>
           </form>
 
