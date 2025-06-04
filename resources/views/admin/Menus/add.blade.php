@@ -14,8 +14,8 @@
                         @csrf
                         <div id="meals-wrapper">
                             <div class="meal-group mb-4 border p-3 rounded" data-index="0">
-                                <div class="row">
-                                    <div class="form-group col-md-6 day-select-group">
+                               <div class="row">
+                                    <div class="form-group col-md-4 day-select-group">
                                         <label>Day</label>
                                         <select name="meals[0][day]" class="form-control day-selector" required>
                                             <option value="">Select Day</option>
@@ -24,7 +24,8 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
+
+                                    <div class="form-group col-md-4">
                                         <label>Meal Time</label>
                                         <select name="meals[0][meal_time]" class="form-control" required>
                                             <option value="">Select Meal Time</option>
@@ -33,7 +34,13 @@
                                             <option value="dinner">Dinner</option>
                                         </select>
                                     </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label>Preparation Time</label>
+                                        <input type="text" name="meals[0][preparation_time]" class="form-control" placeholder="Enter Preparation Time" style="height: calc(2.25rem + -7px); padding:0px 12px;">
+                                    </div>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label>Select Foods</label>

@@ -80,8 +80,8 @@
         const files = $input.prop('files');
         if (!files || files.length === 0) return;
 
-        const $wrapperZone = $input.parent();
-        const $previewZone = $wrapperZone.parent().find('.preview-zone');
+        const $wrapperZone = $input.closest('.dropzone-wrapper');
+        const $previewZone = $wrapperZone.siblings('.preview-zone');
         const $boxZone = $previewZone.find('.box-body');
 
         $wrapperZone.removeClass('dragover');
@@ -111,30 +111,46 @@
                     </div>
                 `);
 
-                $preview.find('.remove-image').on('click', function () {
-                    $(this).closest('.img-preview-wrapper').remove();
-                    if ($boxZone.children().length === 0) {
-                        $previewZone.addClass('hidden');
-                    }
-                });
-
                 $boxZone.append($preview);
             };
             reader.readAsDataURL(file);
         }
     }
 
-    function resetInput($el) {
-        const $form = $('<form>').append($el.clone());
-        $el.replaceWith($form.find('input'));
+    function resetInput($input) {
+        const $newInput = $input.clone().val('');
+        $input.replaceWith($newInput);
+        $newInput.on('change', function () {
+            const $boxZone = $(this).closest('.form-group').find('.preview-zone .box-body');
+            $boxZone.empty();
+            readFiles($(this));
+        });
     }
 
-   $('.dropzone').on('change', function () {
-    const $input = $(this);
-    const $previewZone = $input.closest('.form-group').find('.preview-zone');
-    const $boxZone = $previewZone.find('.box-body');
-    $boxZone.empty();
-    readFiles($input);
-});
+    $(document).ready(function () {
+        // Bind input change
+        $('.dropzone').on('change', function () {
+            const $input = $(this);
+            const $boxZone = $input.closest('.form-group').find('.preview-zone .box-body');
+            $boxZone.empty();
+            readFiles($input);
+        });
+
+        // Bind remove-image click (for both existing and new previews)
+        $(document).on('click', '.remove-image', function () {
+            const $wrapper = $(this).closest('.img-preview-wrapper');
+            const $boxZone = $wrapper.closest('.box-body');
+            const $previewZone = $wrapper.closest('.preview-zone');
+
+            $wrapper.remove();
+
+            if ($boxZone.children().length === 0) {
+                $previewZone.addClass('hidden');
+                const $dropzone = $previewZone.closest('.form-group').find('.dropzone');
+                resetInput($dropzone);
+            }
+        });
+    });
 </script>
 @endpush
+
