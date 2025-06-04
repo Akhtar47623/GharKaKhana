@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-         Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('food_id');
-            $table->unsignedBigInteger('menu_id');
-            $table->foreign('food_id')->references('id')->on('foods');
-            $table->foreign('menu_id')->references('id')->on('menus');
-            $table->string('meal_type');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('role_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menu_items');
+        Schema::dropIfExists('role_user');
     }
 };

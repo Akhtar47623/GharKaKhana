@@ -74,90 +74,98 @@
 @include('layouts.admin.templates.footer')
 @endsection
 @push('js')
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
     function readFiles($input) {
-    const files = $input.prop('files');
-    if (!files || files.length === 0) return;
+        const files = $input.prop('files');
+        if (!files || files.length === 0) return;
 
-    const $wrapperZone = $input.parent();
-    const $previewZone = $wrapperZone.parent().find('.preview-zone');
-    const $boxZone = $previewZone.find('.box-body');
+        const $wrapperZone = $input.closest('.dropzone-wrapper');
+        const $previewZone = $wrapperZone.siblings('.preview-zone');
+        const $boxZone = $previewZone.find('.box-body');
 
-    $wrapperZone.removeClass('dragover');
-    $previewZone.removeClass('hidden');
+        $wrapperZone.removeClass('dragover');
+        $previewZone.removeClass('hidden');
 
-    for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        if (!file.type.startsWith('image/')) continue;
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (!file.type.startsWith('image/')) continue;
 
-        const reader = new FileReader();
-        reader.onload = function (e) {
-        const $preview = $(`
-            <div class="img-preview-wrapper" style="position:relative; display:inline-block; margin:5px;">
-            <img src="${e.target.result}" width="120" height="120" style="border:1px solid #ccc; border-radius:4px;">
-            <button type="button" class="remove-image" style="
-                position:absolute;
-                top: -8px;
-                right: -8px;
-                background: red;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                font-size: 14px;
-                cursor: pointer;
-            ">&times;</button>
-            </div>
-        `);
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const $preview = $(`
+                    <div class="img-preview-wrapper" style="position:relative; display:inline-block; margin:5px;">
+                        <img src="${e.target.result}" width="120" height="120" style="border:1px solid #ccc; border-radius:4px;">
+                        <button type="button" class="remove-image" style="
+                            position:absolute;
+                            top: -8px;
+                            right: -8px;
+                            background: red;
+                            color: white;
+                            border: none;
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            font-size: 14px;
+                            cursor: pointer;
+                        ">&times;</button>
+                    </div>
+                `);
 
-        $preview.find('.remove-image').on('click', function () {
-            $(this).closest('.img-preview-wrapper').remove();
-            if ($boxZone.children().length === 0) {
-            $previewZone.addClass('hidden');
-            }
+                $preview.find('.remove-image').on('click', function () {
+                    const $previewWrapper = $(this).closest('.img-preview-wrapper');
+                    $previewWrapper.remove();
+
+                    if ($boxZone.children().length === 0) {
+                        $previewZone.addClass('hidden');
+
+                        // Reset input so same image can be selected again
+                        const $dropzone = $wrapperZone.find('.dropzone');
+                        resetInput($dropzone);
+                    }
+                });
+
+                $boxZone.append($preview);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function resetInput($input) {
+        const $newInput = $input.clone().val('');
+        $input.replaceWith($newInput);
+        // Re-bind the change event
+        $newInput.on('change', function () {
+            readFiles($(this));
         });
-
-        $boxZone.append($preview);
-        };
-        reader.readAsDataURL(file);
-    }
-    }
-
-    function resetInput($el) {
-    const $form = $('<form>').append($el.clone());
-    $el.replaceWith($form.find('input'));
     }
 
     $(document).ready(function () {
-    $('.dropzone').on('change', function () {
-        readFiles($(this));
-    });
+        $('.dropzone').on('change', function () {
+            readFiles($(this));
+        });
 
-    $('.dropzone-wrapper').on('dragover', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).addClass('dragover');
-    });
+        $('.dropzone-wrapper').on('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).addClass('dragover');
+        });
 
-    $('.dropzone-wrapper').on('dragleave drop', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).removeClass('dragover');
-    });
+        $('.dropzone-wrapper').on('dragleave drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).removeClass('dragover');
+        });
 
-    $('.remove-preview').on('click', function () {
-        const $previewZone = $(this).closest('.preview-zone');
-        const $boxZone = $previewZone.find('.box-body');
-        const $dropzone = $(this).closest('.form-group').find('.dropzone');
+        $('.remove-preview').on('click', function () {
+            const $previewZone = $(this).closest('.preview-zone');
+            const $boxZone = $previewZone.find('.box-body');
+            const $dropzone = $(this).closest('.form-group').find('.dropzone');
 
-        $boxZone.empty();
-        $previewZone.addClass('hidden');
-        resetInput($dropzone);
-    });
+            $boxZone.empty();
+            $previewZone.addClass('hidden');
+            resetInput($dropzone);
+        });
     });
 </script>
-
-
 @endpush
+

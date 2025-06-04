@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('food_id')->constrained('foods')->onDelete('cascade');
-            $table->foreignId('menu_id')->constrained('menus')->onDelete('cascade');
-            $table->string('meal_type');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menu_items');
+        Schema::dropIfExists('roles');
     }
 };
