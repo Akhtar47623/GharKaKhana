@@ -23,7 +23,6 @@ class RegisterController extends Controller
     // Handle registration
     public function register(Request $request)
     {
-        // dd($request->all());
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => ['required','email','max:255', Rule::unique('users')],
